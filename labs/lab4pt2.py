@@ -40,7 +40,7 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
     
-    local_file = "downloaded_file.gif"  # Change if needed
+    local_file = "downloaded_file.gif"
     download_file(args.file_url, local_file)
     s3_object = upload_to_s3(local_file, args.bucket_name)
     presigned_url = generate_presigned_url(args.bucket_name, s3_object, args.expires_in)
